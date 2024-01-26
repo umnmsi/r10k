@@ -6,7 +6,7 @@ test_name 'RK-110 - C87651 - Specify a proxy in an environment variable'
 confine(:to, :platform => ['el', 'sles'])
 
 #Init
-master_platform = fact_on(master, 'osfamily')
+master_platform = fact_on(master, 'os.family')
 r10k_fqp = get_r10k_fqp(master)
 
 case master_platform
@@ -21,7 +21,7 @@ remove_squid = "#{pkg_manager} remove -y squid"
 squid_log = "/var/log/squid/access.log"
 
 #Verification
-squid_log_regex = /CONNECT forgeapi.puppetlabs.com:443/
+squid_log_regex = /CONNECT forgeapi.puppet(labs)?.com:443/
 
 #Teardown
 teardown do

@@ -1,16 +1,16 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2022 Puppet, Inc.
+# Copyright (C) 2023 Puppet, Inc.
 # This file is distributed under the same license as the r10k package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: r10k 3.9.3-265-gcb0a3463\n"
+"Project-Id-Version: r10k 3.9.3-373-g117587fb\n"
 "\n"
 "Report-Msgid-Bugs-To: docs@puppetlabs.com\n"
-"POT-Creation-Date: 2022-12-08 22:58+0000\n"
-"PO-Revision-Date: 2022-12-08 22:58+0000\n"
+"POT-Creation-Date: 2023-07-26 22:34+0000\n"
+"PO-Revision-Date: 2023-07-26 22:34+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -31,47 +31,47 @@ msgstr ""
 msgid "Reason: %{write_lock}"
 msgstr ""
 
-#: ../lib/r10k/action/deploy/environment.rb:116
+#: ../lib/r10k/action/deploy/environment.rb:99
 msgid "Environment(s) \\'%{environments}\\' cannot be found in any source and will not be deployed."
 msgstr ""
 
-#: ../lib/r10k/action/deploy/environment.rb:136
+#: ../lib/r10k/action/deploy/environment.rb:119
 msgid "Executing postrun command."
 msgstr ""
 
-#: ../lib/r10k/action/deploy/environment.rb:150
+#: ../lib/r10k/action/deploy/environment.rb:133
 msgid "Environment %{env_dir} does not match environment name filter, skipping"
 msgstr ""
 
-#: ../lib/r10k/action/deploy/environment.rb:158
+#: ../lib/r10k/action/deploy/environment.rb:141
 msgid "Deploying environment %{env_path}"
 msgstr ""
 
-#: ../lib/r10k/action/deploy/environment.rb:161
+#: ../lib/r10k/action/deploy/environment.rb:144
 msgid "Environment %{env_dir} is now at %{env_signature}"
 msgstr ""
 
-#: ../lib/r10k/action/deploy/environment.rb:165
+#: ../lib/r10k/action/deploy/environment.rb:148
 msgid "Environment %{env_dir} is new, updating all modules"
 msgstr ""
 
-#: ../lib/r10k/action/deploy/module.rb:81
+#: ../lib/r10k/action/deploy/module.rb:82
 msgid "Running postrun command for environments: %{envs_to_run}."
 msgstr ""
 
-#: ../lib/r10k/action/deploy/module.rb:91
+#: ../lib/r10k/action/deploy/module.rb:92
 msgid "No environments were modified, not executing postrun command."
 msgstr ""
 
-#: ../lib/r10k/action/deploy/module.rb:103
+#: ../lib/r10k/action/deploy/module.rb:104
 msgid "Only updating modules in environment(s) %{opt_env} skipping environment %{env_path}"
 msgstr ""
 
-#: ../lib/r10k/action/deploy/module.rb:105
+#: ../lib/r10k/action/deploy/module.rb:106
 msgid "Updating modules %{modules} in environment %{env_path}"
 msgstr ""
 
-#: ../lib/r10k/action/puppetfile/check.rb:18
+#: ../lib/r10k/action/puppetfile/check.rb:25
 msgid "Syntax OK"
 msgstr ""
 
@@ -95,7 +95,11 @@ msgstr ""
 msgid "Error during concurrent deploy of a module: %{message}"
 msgstr ""
 
-#: ../lib/r10k/content_synchronizer.rb:87
+#: ../lib/r10k/content_synchronizer.rb:86
+msgid "Module %{mod_name} failed to synchronize due to %{message}"
+msgstr ""
+
+#: ../lib/r10k/content_synchronizer.rb:92
 msgid "Module thread %{id} exiting: %{message}"
 msgstr ""
 
@@ -105,10 +109,6 @@ msgstr ""
 
 #: ../lib/r10k/deployment.rb:118
 msgid "Unable to load sources; the supplied configuration does not define the 'sources' key"
-msgstr ""
-
-#: ../lib/r10k/environment/bare.rb:6
-msgid "\"bare\" environment type is deprecated; please use \"plain\" instead (environment: %{name})"
 msgstr ""
 
 #: ../lib/r10k/environment/base.rb:89 ../lib/r10k/environment/base.rb:105 ../lib/r10k/environment/base.rb:114 ../lib/r10k/source/base.rb:83
@@ -323,7 +323,7 @@ msgstr ""
 msgid "Fetching remote '%{remote}' at %{path}"
 msgstr ""
 
-#: ../lib/r10k/git/rugged/working_repository.rb:129 ../lib/r10k/git/shellgit/working_repository.rb:101
+#: ../lib/r10k/git/rugged/working_repository.rb:131 ../lib/r10k/git/shellgit/working_repository.rb:101
 msgid "Found local modifications in %{file_path}"
 msgstr ""
 
@@ -403,7 +403,7 @@ msgstr ""
 msgid "The module %{title} does not exist on %{url}."
 msgstr ""
 
-#: ../lib/r10k/module/git.rb:79
+#: ../lib/r10k/module/git.rb:78
 msgid "Cannot track control repo branch for content '%{name}' when not part of a git-backed environment, will use default if available."
 msgstr ""
 
@@ -439,19 +439,15 @@ msgstr ""
 msgid "Ignoring Forge declaration in Puppetfile, using value from settings: %{forge}."
 msgstr ""
 
-#: ../lib/r10k/module_loader/puppetfile.rb:181
-msgid "\"basedir\" is deprecated. Please use \"environment_name\" instead. \"basedir\" will be removed in a future version."
-msgstr ""
-
-#: ../lib/r10k/module_loader/puppetfile.rb:200 ../lib/r10k/puppetfile.rb:104
+#: ../lib/r10k/module_loader/puppetfile.rb:193 ../lib/r10k/puppetfile.rb:104
 msgid "Puppetfile %{path} missing or unreadable"
 msgstr ""
 
-#: ../lib/r10k/module_loader/puppetfile.rb:242
+#: ../lib/r10k/module_loader/puppetfile.rb:235
 msgid "Puppetfiles cannot contain duplicate module names."
 msgstr ""
 
-#: ../lib/r10k/module_loader/puppetfile.rb:244
+#: ../lib/r10k/module_loader/puppetfile.rb:237
 msgid "Remove the duplicates of the following modules: %{dupes}"
 msgstr ""
 

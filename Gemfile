@@ -6,10 +6,10 @@ group :extra do
 end
 
 group :development do
-  gem 'simplecov', '~> 0.9.1'
+  gem 'simplecov', '~> 0.22.0'
   gem 'ruby-prof', :platforms => :ruby
 end
 
-if File.exists? "#{__FILE__}.local"
+if File.exist? "#{__FILE__}.local"
   eval(File.read("#{__FILE__}.local"), binding)
 end

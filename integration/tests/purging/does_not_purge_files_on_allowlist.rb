@@ -1,7 +1,7 @@
 require 'git_utils'
 require 'r10k_utils'
 require 'master_manipulator'
-test_name 'RK-257 - C98046 - r10k does not purge files on whitelist'
+test_name 'RK-257 - C98046 - r10k does not purge files on allowlist'
 
 #Init
 env_path = on(master, puppet('config print environmentpath')).stdout.rstrip
@@ -26,9 +26,6 @@ teardown do
 end
 
 # initalize file content
-step 'Stub the forge'
-stub_forge_on(master)
-
 step 'Backup Current "r10k" Config'
 on(master, "mv #{r10k_config_path} #{r10k_config_bak_path}")
 
@@ -42,7 +39,7 @@ sources:
     remote: "#{git_control_remote}"
 deploy:
   purge_levels: ['deployment', 'environment', 'puppetfile']
-  purge_whitelist: ['**/*.pp']
+  purge_allowlist: ['**/*.pp']
 CONF
 
 step 'Update the "r10k" Config'

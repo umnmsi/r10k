@@ -4,6 +4,29 @@ CHANGELOG
 Unreleased
 ----------
 
+4.0.1
+-----
+
+- shellgit: Ensure the passed filepath to diff-index is interpreted as filepath [#1367](https://github.com/puppetlabs/r10k/pull/1367)
+
+4.0.0
+-----
+- Drop Ruby 2.3/2.4/2.5 support; use puppet_forge 4.1 or newer [#1336](https://github.com/puppetlabs/r10k/pull/1336)
+- (maint) Add Ruby 3.0 to rspec CI matrix [#1261](https://github.com/puppetlabs/r10k/pull/1261)
+- (RK-368) remove `purge_whitelist` setting [#1277](https://github.com/puppetlabs/r10k/pull/1277)
+- (RK-390) Remove default ref for deploying git modules [#1275](http://github.com/puppetlabs/r10k/pull/1275)
+- (RK-391) Change `exclude_spec` default to true for module spec dir deletion [#1264](https://github.com/puppetlabs/r10k/pull/1261)
+- (RK-383) Remove deprecated `basedir` method from Puppetfile DSL. Users should use `environment_name` instead. [#1254](https://github.com/puppetlabs/r10k/pull/1254)
+- (RK-386) Remove deprecated `bare` environment type. [#1235](https://github.com/puppetlabs/r10k/issues/1235)
+
+
+3.16.0
+------
+- Emit more debug output when modules fail to sync [#1347](https://github.com/puppetlabs/r10k/pull/1347)
+- Update GitHub Actions & introduce dependabot [#1337](https://github.com/puppetlabs/r10k/pull/1337)
+- Update R10K proxy usage to follow newer rugged best practices [PE-35980](https://tickets.puppet.com/browse/PE-35980)
+- Update Acceptance tests to be compatible with Puppet 8 [#1349](https://github.com/puppetlabs/r10k/pull/1349)
+
 3.15.4
 ------
 - Pin dependencies to maintain support for old Ruby versions [#1329](https://github.com/puppetlabs/r10k/pull/1329)

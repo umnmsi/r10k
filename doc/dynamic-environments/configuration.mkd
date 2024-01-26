@@ -160,6 +160,18 @@ git:
 See the [git provider documentation](../git/providers.mkd) for more information
 regarding Git providers.
 
+#### default_ref
+
+r10k is unable to deploy a git module if no `ref` is specified. A `default_ref` can be
+set in the r10k config that will become the ref a module uses if not otherwise specified. This
+is the lowest priority setting for a module's `ref`. Read the [Puppetfile documentation](../puppetfile.mkd#git)
+for higher priority settings to determine a module's ref.
+
+```yaml
+git:
+  default_ref: main
+```
+
 #### proxy
 
 The 'proxy' setting allows you to set or override the global proxy setting specifically
@@ -437,7 +449,7 @@ deploy:
 
 #### exclude_spec
 
-During module deployment, r10k's default behavior is to deploy the spec directory. Setting
+During module deployment, r10k's default behavior is to delete the spec directory. Setting
 `exclude_spec` to true will deploy modules without their spec directory. This behavior
 can be configured for all modules using the `exclude_spec` setting in the r10k config.
 It can also be passed as a CLI argument for `deploy environment/module`, overriding the
