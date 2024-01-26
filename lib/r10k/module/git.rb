@@ -72,6 +72,11 @@ class R10K::Module::Git < R10K::Module::Base
 
     @desired_ref ||= 'master'
 
+    if @remote =~ %r{^git://(github\.com.*)}
+      STDERR.puts "Found github.com git protocol match #{$1}"
+      @remote = "https://#{$1}"
+    end
+
     if @desired_ref == :control_branch
       if @environment && @environment.respond_to?(:ref)
         @desired_ref = @environment.ref
